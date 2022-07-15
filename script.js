@@ -54,6 +54,14 @@ eqlBtn.addEventListener("mousedown", () => {
   }
 });
 
+clearBtn.addEventListener("mousedown", clearAll);
+
+function clearAll() {
+  firstOperand = "";
+  secondOperand = "";
+  operator = "";
+}
+
 function add(num1, num2) {
   return num1 + num2;
 }
