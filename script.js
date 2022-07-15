@@ -2,6 +2,7 @@ const display = document.querySelector("#display");
 const numButtons = document.querySelectorAll(".num-btn");
 const clearBtn = document.querySelector("#clr-btn");
 const operatorBtns = document.querySelectorAll(".operator-btn");
+const eqlBtn = document.querySelector("#eql-btn");
 
 let displayValue = [];
 
@@ -9,6 +10,25 @@ let numberArray = [];
 let operands = [];
 
 let operator;
+
+eqlBtn.addEventListener("mousedown", () => {
+  if (!numberArray[0] == "") {
+    operands.push(numberArray.join(""));
+  }
+  if (hasTwoOperands()) {
+    let result = operate(
+      operator,
+      parseFloat(operands[0]),
+      parseFloat(operands[1])
+    );
+    console.log(result);
+
+    operands = [];
+    operands.push(result);
+  }
+
+  numberArray = [];
+});
 
 numButtons.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
