@@ -2,26 +2,32 @@ const display = document.querySelector("#display");
 const numButtons = document.querySelectorAll(".num-btn");
 const clearBtn = document.querySelector("#clr-btn");
 
-let displayValue = "";
+let displayValue = [];
 
 numButtons.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
-    updateDisplay(e.target.textContent);
-    updateDisplayValue(e.target.textContent);
+    displayValue.push(e.target.textContent);
   });
 });
 
-function updateDisplayValue(str) {
-  if (displayValue === "") {
-    displayValue = str;
-  } else {
-    displayValue += str;
-  }
-}
+// numButtons.forEach((button) => {
+//   button.addEventListener("mousedown", (e) => {
+//     updateDisplay(e.target.textContent);
+//     updateDisplayValue(e.target.textContent);
+//   });
+// });
 
-function updateDisplay(content) {
-  display.textContent += content;
-}
+// function updateDisplayValue(str) {
+//   if (displayValue === "") {
+//     displayValue = str;
+//   } else {
+//     displayValue += str;
+//   }
+// }
+
+// function updateDisplay(content) {
+//   display.textContent += content;
+// }
 
 function add(num1, num2) {
   return num1 + num2;
