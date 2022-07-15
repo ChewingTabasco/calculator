@@ -29,11 +29,13 @@ operatorBtns.forEach((button) => {
 });
 
 eqlBtn.addEventListener("mousedown", () => {
-  console.log(operate(operator, Number(firstOperand), Number(secondOperand)));
+  if (firstOperand != "" && secondOperand != "" && operator != "") {
+    console.log(operate(operator, Number(firstOperand), Number(secondOperand)));
 
-  firstOperand = "";
-  secondOperand = "";
-  operator = "";
+    firstOperand = "";
+    secondOperand = "";
+    operator = "";
+  }
 });
 
 function add(num1, num2) {
