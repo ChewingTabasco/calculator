@@ -92,6 +92,9 @@ function operate(operator, num1, num2) {
   }
 
   if (operator == "÷") {
+    if (num2 == 0) {
+      return "ERROR";
+    }
     return divide(num1, num2);
   }
 }
