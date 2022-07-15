@@ -8,7 +8,6 @@ let displayValue = [];
 let numberArray = [];
 let operands = [];
 
-let hasOperator = false;
 let operator;
 
 numButtons.forEach((button) => {
@@ -36,7 +35,6 @@ operatorBtns.forEach((button) => {
     operator = e.target.textContent;
 
     numberArray = [];
-    hasOperator = true;
   });
 });
 
