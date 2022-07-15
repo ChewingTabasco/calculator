@@ -10,7 +10,7 @@
   border-radius: 10px;
 }
 
-#display {
+#display-container {
   border: 1px solid black;
   border-radius: 10px;
   height: 75px;
