@@ -81,6 +81,7 @@ function clearAll() {
   firstOperand = "";
   secondOperand = "";
   operator = "";
+  console.clear();
 }
 
 function add(num1, num2) {
