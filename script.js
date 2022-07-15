@@ -5,18 +5,18 @@ const operatorBtns = document.querySelectorAll(".operator-btn");
 const eqlBtn = document.querySelector("#eql-btn");
 const allBtns = document.querySelectorAll("button");
 
-let firstNum = "";
-let secondNum = "";
+let firstOperand = "";
+let secondOperand = "";
 let operator = "";
 
 numButtons.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
     if (operator === "") {
-      firstNum += e.target.textContent;
-      console.log(firstNum);
+      firstOperand += e.target.textContent;
+      console.log(firstOperand);
     } else {
-      secondNum += e.target.textContent;
-      console.log(secondNum);
+      secondOperand += e.target.textContent;
+      console.log(secondOperand);
     }
   });
 });
@@ -29,7 +29,11 @@ operatorBtns.forEach((button) => {
 });
 
 eqlBtn.addEventListener("mousedown", () => {
-  console.log(operate(operator, Number(firstNum), Number(secondNum)));
+  console.log(operate(operator, Number(firstOperand), Number(secondOperand)));
+
+  firstOperand = "";
+  secondOperand = "";
+  operator = "";
 });
 
 function add(num1, num2) {
