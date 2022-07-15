@@ -93,9 +93,6 @@ function clearAll() {
 }
 
 function updateDisplay() {
-  // if (firstOperand === "") {
-  //   display.textContent = "0";
-  // }
   display.textContent = firstOperand + operator + secondOperand;
 }
 
