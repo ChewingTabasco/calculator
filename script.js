@@ -1,4 +1,5 @@
 const displayContainer = document.querySelector("#display-container");
+const upperDisplay = document.querySelector("#upper-display");
 const allBtns = document.querySelectorAll("button");
 const numButtons = document.querySelectorAll(".num-btn");
 const operatorBtns = document.querySelectorAll(".operator-btn");
