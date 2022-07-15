@@ -14,6 +14,7 @@ let operator;
 
 allBtns.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
+    //ignore multiple decimals in a row
     if (
       e.target.textContent == "." &&
       displayValue[displayValue.length - 1] == "."
@@ -21,6 +22,10 @@ allBtns.forEach((button) => {
       return;
     }
     if (e.target.textContent === "=") {
+      return;
+    }
+    if (e.target.textContent === "C") {
+      clearAll();
       return;
     }
 
@@ -50,6 +55,7 @@ eqlBtn.addEventListener("mousedown", () => {
 
 numButtons.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
+    //ignore multiple decimals in a row
     if (
       e.target.textContent === "." &&
       numberArray[numberArray.length - 1] === "."
@@ -87,6 +93,13 @@ function hasTwoOperands() {
     return true;
   }
   return false;
+}
+
+function clearAll() {
+  display.textContent = "0";
+  numberArray = [];
+  operands = [];
+  operator = null;
 }
 
 // numButtons.forEach((button) => {
