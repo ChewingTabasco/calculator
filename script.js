@@ -14,7 +14,10 @@ let operator;
 
 allBtns.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
-    if (e.target.textContent === "." && displayValue.length - 1 === ".") {
+    if (
+      e.target.textContent == "." &&
+      displayValue[displayValue.length - 1] == "."
+    ) {
       return;
     }
     if (e.target.textContent === "=") {
