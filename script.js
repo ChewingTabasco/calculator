@@ -19,10 +19,22 @@ numButtons.forEach((button) => {
 
 operatorBtns.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
-    operator = e.target.textContent;
     if (!numberArray[0] == "") {
       operands.push(numberArray.join(""));
     }
+    if (hasTwoOperands()) {
+      let result = operate(
+        operator,
+        parseFloat(operands[0]),
+        parseFloat(operands[1])
+      );
+      console.log(result);
+
+      operands = [];
+      operands.push(result);
+    }
+    operator = e.target.textContent;
+
     numberArray = [];
     hasOperator = true;
   });
@@ -79,11 +91,11 @@ function operate(operator, num1, num2) {
     return subtract(num1, num2);
   }
 
-  if (operator == "*") {
+  if (operator == "×") {
     return multiply(num1, num2);
   }
 
-  if (operator == "/") {
+  if (operator == "÷") {
     return divide(num1, num2);
   }
 }
