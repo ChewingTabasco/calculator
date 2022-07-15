@@ -5,6 +5,22 @@ const operatorBtns = document.querySelectorAll(".operator-btn");
 const eqlBtn = document.querySelector("#eql-btn");
 const allBtns = document.querySelectorAll("button");
 
+let firstNum = "";
+let secondNum = "";
+let operator = "";
+
+numButtons.forEach((button) => {
+  button.addEventListener("mousedown", (e) => {
+    if (operator === "") {
+      firstNum += e.target.textContent;
+      console.log(firstNum);
+    } else {
+      secondNum += e.target.textContent;
+      console.log(secondNum);
+    }
+  });
+});
+
 function add(num1, num2) {
   return num1 + num2;
 }
