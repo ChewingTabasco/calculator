@@ -20,7 +20,9 @@ numButtons.forEach((button) => {
 operatorBtns.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
     operator = e.target.textContent;
-    operands.push(numberArray.join(""));
+    if (!numberArray[0] == "") {
+      operands.push(numberArray.join(""));
+    }
     numberArray = [];
     hasOperator = true;
   });
