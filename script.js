@@ -1,13 +1,9 @@
 const display = document.querySelector("#display");
-const buttons = document.querySelectorAll("button");
+const numButtons = document.querySelectorAll(".num-btn");
 const clearBtn = document.querySelector("#clr-btn");
 
-buttons.forEach((button) => {
+numButtons.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
-    if (e.target.textContent === "C") {
-      display.textContent = "";
-      return;
-    }
     updateDisplay(e.target.textContent);
   });
 });
