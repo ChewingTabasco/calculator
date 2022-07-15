@@ -1,12 +1,20 @@
 const display = document.querySelector("#display");
 const numButtons = document.querySelectorAll(".num-btn");
 const clearBtn = document.querySelector("#clr-btn");
+const operatorBtns = document.querySelectorAll(".operator-btn");
 
 let displayValue = [];
+let operator;
 
 numButtons.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
     displayValue.push(e.target.textContent);
+  });
+});
+
+operatorBtns.forEach((button) => {
+  button.addEventListener("mousedown", (e) => {
+    operator = e.target.textContent;
   });
 });
 
