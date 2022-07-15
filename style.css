@@ -10,10 +10,10 @@
   border-radius: 10px;
 }
 
-#display-container {
+#display {
   border: 1px solid black;
   border-radius: 10px;
-  height: 75px;
+  height: 50px;
   padding: 5px;
 
   font-size: 40px;

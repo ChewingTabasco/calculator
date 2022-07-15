@@ -1,6 +1,4 @@
-const displayContainer = document.querySelector("#display-container");
-const upperDisplay = document.querySelector("#upper-display");
-const lowerDisplay = document.querySelector("#lower-display");
+const display = document.querySelector("#display");
 const allBtns = document.querySelectorAll("button");
 const numButtons = document.querySelectorAll(".num-btn");
 const operatorBtns = document.querySelectorAll(".operator-btn");
@@ -11,6 +9,12 @@ const eqlBtn = document.querySelector("#eql-btn");
 let firstOperand = "";
 let secondOperand = "";
 let operator = "";
+
+allBtns.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    updateDisplay();
+  });
+});
 
 numButtons.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
@@ -82,6 +86,10 @@ function clearAll() {
   secondOperand = "";
   operator = "";
   console.clear();
+}
+
+function updateDisplay() {
+  display.textContent = firstOperand + operator + secondOperand;
 }
 
 function add(num1, num2) {
