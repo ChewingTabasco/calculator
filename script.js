@@ -3,6 +3,7 @@ const numButtons = document.querySelectorAll(".num-btn");
 const clearBtn = document.querySelector("#clr-btn");
 const operatorBtns = document.querySelectorAll(".operator-btn");
 const eqlBtn = document.querySelector("#eql-btn");
+const allBtns = document.querySelectorAll("button");
 
 let displayValue = [];
 
@@ -10,6 +11,20 @@ let numberArray = [];
 let operands = [];
 
 let operator;
+
+allBtns.forEach((button) => {
+  button.addEventListener("mousedown", (e) => {
+    if (e.target.textContent === "." && displayValue.length - 1 === ".") {
+      return;
+    }
+    if (e.target.textContent === "=") {
+      return;
+    }
+
+    displayValue.push(e.target.textContent);
+    display.textContent = displayValue.join("");
+  });
+});
 
 eqlBtn.addEventListener("mousedown", () => {
   if (!numberArray[0] == "") {
