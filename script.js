@@ -26,6 +26,13 @@ operatorBtns.forEach((button) => {
   });
 });
 
+function hasTwoOperands() {
+  if (operands.length === 2) {
+    return true;
+  }
+  return false;
+}
+
 // numButtons.forEach((button) => {
 //   button.addEventListener("mousedown", (e) => {
 //     updateDisplay(e.target.textContent);
