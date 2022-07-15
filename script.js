@@ -1,9 +1,10 @@
 const display = document.querySelector("#display");
-const numButtons = document.querySelectorAll(".num-btn");
-const clearBtn = document.querySelector("#clr-btn");
-const operatorBtns = document.querySelectorAll(".operator-btn");
-const eqlBtn = document.querySelector("#eql-btn");
 const allBtns = document.querySelectorAll("button");
+const numButtons = document.querySelectorAll(".num-btn");
+const operatorBtns = document.querySelectorAll(".operator-btn");
+const decimalBtn = document.querySelector("#decimal-btn");
+const clearBtn = document.querySelector("#clr-btn");
+const eqlBtn = document.querySelector("#eql-btn");
 
 let firstOperand = "";
 let secondOperand = "";
@@ -55,6 +56,20 @@ eqlBtn.addEventListener("mousedown", () => {
 });
 
 clearBtn.addEventListener("mousedown", clearAll);
+
+decimalBtn.addEventListener("mousedown", (e) => {
+  if (operator === "") {
+    if (firstOperand.includes(".")) {
+      return;
+    }
+    firstOperand += e.target.textContent;
+  } else {
+    if (secondOperand.includes(".")) {
+      return;
+    }
+    secondOperand += e.target.textContent;
+  }
+});
 
 function clearAll() {
   firstOperand = "";
