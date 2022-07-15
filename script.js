@@ -28,6 +28,10 @@ operatorBtns.forEach((button) => {
   });
 });
 
+eqlBtn.addEventListener("mousedown", () => {
+  console.log(operate(operator, Number(firstNum), Number(secondNum)));
+});
+
 function add(num1, num2) {
   return num1 + num2;
 }
