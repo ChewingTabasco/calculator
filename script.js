@@ -21,6 +21,13 @@ numButtons.forEach((button) => {
   });
 });
 
+operatorBtns.forEach((button) => {
+  button.addEventListener("mousedown", (e) => {
+    operator = e.target.textContent;
+    console.log(operator);
+  });
+});
+
 function add(num1, num2) {
   return num1 + num2;
 }
