@@ -23,8 +23,20 @@ numButtons.forEach((button) => {
 
 operatorBtns.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
-    operator = e.target.textContent;
-    console.log(operator);
+    if (operator === "") {
+      operator = e.target.textContent;
+      console.log(operator);
+    } else {
+      firstOperand = operate(
+        operator,
+        Number(firstOperand),
+        Number(secondOperand)
+      );
+      secondOperand = "";
+      console.log(firstOperand);
+      operator = e.target.textContent;
+      console.log(operator);
+    }
   });
 });
 
