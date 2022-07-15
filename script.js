@@ -12,6 +12,10 @@ let operator = "";
 
 allBtns.forEach((button) => {
   button.addEventListener("click", (e) => {
+    if (e.target.textContent === "AC") {
+      display.textContent = "0";
+      return;
+    }
     updateDisplay();
   });
 });
@@ -89,6 +93,9 @@ function clearAll() {
 }
 
 function updateDisplay() {
+  // if (firstOperand === "") {
+  //   display.textContent = "0";
+  // }
   display.textContent = firstOperand + operator + secondOperand;
 }
 
