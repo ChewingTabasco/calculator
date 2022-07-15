@@ -50,6 +50,12 @@ eqlBtn.addEventListener("mousedown", () => {
 
 numButtons.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
+    if (
+      e.target.textContent === "." &&
+      numberArray[numberArray.length - 1] === "."
+    ) {
+      return;
+    }
     numberArray.push(e.target.textContent);
   });
 });
