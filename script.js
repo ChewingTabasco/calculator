@@ -27,6 +27,10 @@ numButtons.forEach((button) => {
 operatorBtns.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
     if (operator === "") {
+      if (firstOperand === "") {
+        firstOperand += 0;
+        console.log(firstOperand);
+      }
       operator = e.target.textContent;
       console.log(operator);
     } else {
