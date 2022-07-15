@@ -2,11 +2,22 @@ const display = document.querySelector("#display");
 const numButtons = document.querySelectorAll(".num-btn");
 const clearBtn = document.querySelector("#clr-btn");
 
+let displayValue = "";
+
 numButtons.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
     updateDisplay(e.target.textContent);
+    updateDisplayValue(e.target.textContent);
   });
 });
+
+function updateDisplayValue(str) {
+  if (displayValue === "") {
+    displayValue = str;
+  } else {
+    displayValue += str;
+  }
+}
 
 function updateDisplay(content) {
   display.textContent += content;
