@@ -46,6 +46,8 @@ eqlBtn.addEventListener("mousedown", () => {
     );
     console.log(result);
 
+    display.textContent = result;
+
     operands = [];
     operands.push(result);
   }
