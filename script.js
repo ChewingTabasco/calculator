@@ -4,17 +4,25 @@ const clearBtn = document.querySelector("#clr-btn");
 const operatorBtns = document.querySelectorAll(".operator-btn");
 
 let displayValue = [];
+
+let numberArray = [];
+let operands = [];
+
+let hasOperator = false;
 let operator;
 
 numButtons.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
-    displayValue.push(e.target.textContent);
+    numberArray.push(e.target.textContent);
   });
 });
 
 operatorBtns.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
     operator = e.target.textContent;
+    operands.push(numberArray.join(""));
+    numberArray = [];
+    hasOperator = true;
   });
 });
 
