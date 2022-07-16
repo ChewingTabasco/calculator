@@ -30,11 +30,17 @@ operatorBtns.forEach((button) => {
       }
       operator = e.target.textContent;
     } else {
-      firstOperand = operate(
+      let result = operate(
         operator,
         Number(firstOperand),
         Number(secondOperand)
       );
+
+      if (Math.round(result) < result) {
+        firstOperand = String(result.toFixed(6));
+      } else {
+        firstOperand = String(result);
+      }
       secondOperand = "";
       operator = e.target.textContent;
     }
@@ -44,23 +50,12 @@ operatorBtns.forEach((button) => {
 
 eqlBtn.addEventListener("mousedown", () => {
   if (firstOperand != "" && secondOperand != "" && operator != "") {
-    let total = operate(operator, Number(firstOperand), Number(secondOperand));
+    let result = operate(operator, Number(firstOperand), Number(secondOperand));
 
-    if (Math.round(total) < total) {
-      let totalStr = String(total);
-      let totalSplitArr = totalStr.split(".");
-      console.log(totalSplitArr);
-
-      let decimals = totalSplitArr[1].split("");
-      console.log(decimals);
-
-      if (decimals.length > 6) {
-        firstOperand = String(total.toFixed(6));
-      } else {
-        firstOperand = String(total);
-      }
+    if (Math.round(result) < result) {
+      firstOperand = String(result.toFixed(6));
     } else {
-      firstOperand = String(total);
+      firstOperand = String(result);
     }
 
     secondOperand = "";
@@ -120,6 +115,25 @@ function clearAll() {
 function updateDisplay() {
   display.textContent = firstOperand + operator + secondOperand;
 }
+
+// function roundResult(total) {
+//   if (Math.round(total) < total) {
+//     let totalStr = String(total);
+//     let totalSplitArr = totalStr.split(".");
+//     console.log(totalSplitArr);
+
+//     let decimals = totalSplitArr[1].split("");
+//     console.log(decimals);
+
+//     if (decimals.length > 6) {
+//       return String(total.toFixed(6));
+//     } else {
+//       return String(total);
+//     }
+//   } else {
+//     return String(total);
+//   }
+// }
 
 function add(num1, num2) {
   return num1 + num2;
