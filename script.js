@@ -37,7 +37,7 @@ operatorBtns.forEach((button) => {
       );
 
       if (Math.round(result) < result) {
-        firstOperand = String(result.toFixed(6));
+        firstOperand = String((result.toFixed(6) * 100) / 100);
       } else {
         firstOperand = String(result);
       }
@@ -53,7 +53,7 @@ eqlBtn.addEventListener("mousedown", () => {
     let result = operate(operator, Number(firstOperand), Number(secondOperand));
 
     if (Math.round(result) < result) {
-      firstOperand = String(result.toFixed(6));
+      firstOperand = String((result.toFixed(6) * 100) / 100);
     } else {
       firstOperand = String(result);
     }
