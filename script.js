@@ -54,7 +54,7 @@ eqlBtn.addEventListener("mousedown", () => {
       let decimals = totalSplitArr[1].split("");
       console.log(decimals);
 
-      if (decimals.length >= 6) {
+      if (decimals.length > 6) {
         firstOperand = String(total.toFixed(6));
       } else {
         firstOperand = String(total);
