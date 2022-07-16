@@ -15,10 +15,8 @@ numButtons.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
     if (operator === "") {
       firstOperand += e.target.textContent;
-      console.log(firstOperand);
     } else {
       secondOperand += e.target.textContent;
-      console.log(secondOperand);
     }
     updateDisplay();
   });
@@ -29,10 +27,8 @@ operatorBtns.forEach((button) => {
     if (operator === "") {
       if (firstOperand === "") {
         firstOperand += 0;
-        console.log(firstOperand);
       }
       operator = e.target.textContent;
-      console.log(operator);
     } else {
       firstOperand = operate(
         operator,
@@ -40,9 +36,7 @@ operatorBtns.forEach((button) => {
         Number(secondOperand)
       );
       secondOperand = "";
-      console.log(firstOperand);
       operator = e.target.textContent;
-      console.log(operator);
     }
     updateDisplay();
   });
@@ -55,7 +49,6 @@ eqlBtn.addEventListener("mousedown", () => {
       Number(firstOperand),
       Number(secondOperand)
     );
-    console.log(firstOperand);
 
     secondOperand = "";
     operator = "";
@@ -89,8 +82,6 @@ function clearAll() {
   secondOperand = "";
   operator = "";
   display.textContent = "0";
-
-  console.clear();
 }
 
 function updateDisplay() {
