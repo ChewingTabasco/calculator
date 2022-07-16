@@ -44,9 +44,24 @@ operatorBtns.forEach((button) => {
 
 eqlBtn.addEventListener("mousedown", () => {
   if (firstOperand != "" && secondOperand != "" && operator != "") {
-    firstOperand = String(
-      operate(operator, Number(firstOperand), Number(secondOperand))
-    );
+    let total = operate(operator, Number(firstOperand), Number(secondOperand));
+
+    if (Math.round(total) < total) {
+      let totalStr = String(total);
+      let totalSplitArr = totalStr.split(".");
+      console.log(totalSplitArr);
+
+      let decimals = totalSplitArr[1].split("");
+      console.log(decimals);
+
+      if (decimals.length >= 6) {
+        firstOperand = String(total.toFixed(6));
+      } else {
+        firstOperand = String(total);
+      }
+    } else {
+      firstOperand = String(total);
+    }
 
     secondOperand = "";
     operator = "";
