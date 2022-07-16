@@ -11,16 +11,6 @@ let firstOperand = "";
 let secondOperand = "";
 let operator = "";
 
-allBtns.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    if (e.target.textContent === "AC") {
-      display.textContent = "0";
-      return;
-    }
-    updateDisplay();
-  });
-});
-
 numButtons.forEach((button) => {
   button.addEventListener("mousedown", (e) => {
     if (operator === "") {
@@ -30,6 +20,7 @@ numButtons.forEach((button) => {
       secondOperand += e.target.textContent;
       console.log(secondOperand);
     }
+    updateDisplay();
   });
 });
 
@@ -53,6 +44,7 @@ operatorBtns.forEach((button) => {
       operator = e.target.textContent;
       console.log(operator);
     }
+    updateDisplay();
   });
 });
 
@@ -68,6 +60,11 @@ eqlBtn.addEventListener("mousedown", () => {
     secondOperand = "";
     operator = "";
   }
+
+  if (firstOperand === "") {
+    return;
+  }
+  updateDisplay();
 });
 
 clearBtn.addEventListener("mousedown", clearAll);
@@ -84,12 +81,15 @@ decimalBtn.addEventListener("mousedown", (e) => {
     }
     secondOperand += e.target.textContent;
   }
+  updateDisplay();
 });
 
 function clearAll() {
   firstOperand = "";
   secondOperand = "";
   operator = "";
+  display.textContent = "0";
+
   console.clear();
 }
 
