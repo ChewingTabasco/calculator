@@ -44,10 +44,8 @@ operatorBtns.forEach((button) => {
 
 eqlBtn.addEventListener("mousedown", () => {
   if (firstOperand != "" && secondOperand != "" && operator != "") {
-    firstOperand = operate(
-      operator,
-      Number(firstOperand),
-      Number(secondOperand)
+    firstOperand = String(
+      operate(operator, Number(firstOperand), Number(secondOperand))
     );
 
     secondOperand = "";
@@ -75,6 +73,26 @@ decimalBtn.addEventListener("mousedown", (e) => {
     secondOperand += e.target.textContent;
   }
   updateDisplay();
+});
+
+negBtn.addEventListener("click", (e) => {
+  if (operator === "") {
+    if (firstOperand.includes("-")) {
+      firstOperand = firstOperand.replace("-", "");
+      updateDisplay();
+    } else {
+      firstOperand = "-" + firstOperand;
+      updateDisplay();
+    }
+  } else {
+    if (secondOperand.includes("-")) {
+      secondOperand = secondOperand.replace("-", "");
+      updateDisplay();
+    } else {
+      secondOperand = "-" + secondOperand;
+      updateDisplay();
+    }
+  }
 });
 
 function clearAll() {
