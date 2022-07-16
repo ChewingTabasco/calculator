@@ -15,7 +15,7 @@ body {
 
 #ui-container {
   min-height: fit-content;
-  min-width: fit-content;
+  /* min-width: fit-content; */
 
   height: 400px;
   width: 300px;
@@ -38,6 +38,8 @@ body {
   margin-bottom: 15px;
 
   background-color: white;
+
+  overflow: hidden;
 }
 
 #btn-container {
