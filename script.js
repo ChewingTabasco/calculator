@@ -5,6 +5,7 @@ const operatorBtns = document.querySelectorAll(".operator-btn");
 const decimalBtn = document.querySelector("#decimal-btn");
 const clearBtn = document.querySelector("#clr-btn");
 const eqlBtn = document.querySelector("#eql-btn");
+const negBtn = document.querySelector("#neg-btn");
 
 let firstOperand = "";
 let secondOperand = "";
